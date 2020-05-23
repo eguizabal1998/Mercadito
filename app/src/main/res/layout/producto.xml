@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="5dp"
+    android:elevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrain_productorow_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageView_producto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/cargando"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_productorow_nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView_producto"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Nombre del producto" />
+
+            <TextView
+                android:id="@+id/textView_productorow_signo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                app:layout_constraintStart_toEndOf="@+id/textView_productorow_nombre"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="$" />
+
+            <TextView
+                android:id="@+id/textView_productorow_precio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@+id/textView_productorow_signo"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="3.75" />
+
+            <TextView
+                android:id="@+id/textView_productorow_unidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@+id/textView_productorow_precio"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Unidad/libra" />
+
+            <TextView
+                android:id="@+id/textView_productorow_descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toEndOf="@+id/imageView_producto"
+                app:layout_constraintTop_toBottomOf="@+id/textView_productorow_nombre"
+                tools:text="Descripcion del producto" />
+
+            <Switch
+                android:id="@+id/Switch_productorow_disponible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diponible   "
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_productorow_descripcion"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/LL_productorow_modificar"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/btn_productorow_editar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editar"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_edit_24dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_productorow_eliminar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eliminar"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_delete_24dp"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

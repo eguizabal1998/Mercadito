@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.basicdeb.mercadito.viewmodel.negocio.AgregarViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent">
+
+        <ScrollView
+            android:id="@+id/constrain_agregar_producto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:visibility="visible"
+                android:padding="10dp">
+
+
+                <TextView
+                    android:id="@+id/text1_agregar"
+                    style="@style/viewParent.headerText.NoMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:text="Informacion de\ntu Producto"
+                    android:textColor="@android:color/white"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toTopOf="@+id/card_agregar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_agregar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:cardBackgroundColor="@color/whiteTextColor"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text1_agregar">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="10dp"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="25dp"
+                        android:gravity="center_horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_agregar_nombre"
+                                style="@style/modifiedEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Nombre"
+                                android:inputType="text"
+                                android:text="@={viewModel.nombre}"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_agregar_precio"
+                                style="@style/modifiedEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="precio"
+                                android:inputType="numberDecimal"
+                                android:text="@={viewModel.precio}"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_agregar_unidades"
+                                style="@style/modifiedEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Unidades de venta (Unidad,Libra,Kg,Litro...)"
+                                android:inputType="textMultiLine"
+                                android:text="@={viewModel.unidad}"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_agregar_descripcion"
+                                style="@style/modifiedEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Descripcion"
+                                android:inputType="textMultiLine"
+                                android:text="@={viewModel.descripcion}"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/img_agregar_prod"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            tools:src="@drawable/logo"
+                            android:src="@drawable/blanco"
+                            android:layout_marginTop="15dp"/>
+
+                        <Button
+                            android:id="@+id/btn_agregar_cargar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            style="@style/loginButton"
+                            android:text="Cargar Imagen"/>
+
+
+
+                        <ProgressBar
+                            android:id="@+id/cirLoginButton_agregar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/btn_agregar_guardar"
+                    style="@style/ButtonWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Guardar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_agregar"/>
+
+                <Button
+                    android:id="@+id/btn_agregar_modificar"
+                    style="@style/ButtonWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Actualizar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_agregar"
+                    android:visibility="gone"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</layout>

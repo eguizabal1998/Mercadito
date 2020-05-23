@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation2"
+    app:startDestination="@id/misPedidosFragment">
+
+    <fragment
+        android:id="@+id/misPedidosFragment"
+        android:name="com.basicdeb.mercadito.ui.estados.MisPedidosFragment"
+        android:label="Mis Pedidos"
+        tools:layout="@layout/mis_pedidos_fragment" />
+    <fragment
+        android:id="@+id/configFragment"
+        android:name="com.basicdeb.mercadito.ui.config.ConfigFragment"
+        android:label="Horarios"
+        tools:layout="@layout/config_fragment" />
+    <fragment
+        android:id="@+id/negocioFragment"
+        android:name="com.basicdeb.mercadito.ui.negocio.NegocioFragment"
+        android:label="Mis Productos"
+        tools:layout="@layout/negocio_fragment" >
+        <action
+            android:id="@+id/action_negocioFragment_to_agregarProFragment"
+            app:destination="@id/agregarProFragment" />
+        <action
+            android:id="@+id/action_negocioFragment_to_modificarFragment"
+            app:destination="@id/modificarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.basicdeb.mercadito.ui.perfil.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/perfil_fragment" />
+
+    <fragment
+        android:id="@+id/agregarProFragment"
+        android:name="com.basicdeb.mercadito.ui.negocio.AgregarProFragment"
+        android:label="Agregar Producto"
+        tools:layout="@layout/agregar_fragment" />
+    <fragment
+        android:id="@+id/modificarFragment"
+        android:name="com.basicdeb.mercadito.ui.negocio.ModificarFragment"
+        android:label="ModificarFragment"
+        tools:layout="@layout/modificar_fragment">
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+        <argument
+            android:name="precio"
+            app:argType="string" />
+        <argument
+            android:name="descripcion"
+            app:argType="string" />
+        <argument
+            android:name="unidad"
+            app:argType="string" />
+        <argument
+            android:name="negocioId"
+            app:argType="string" />
+        <argument
+            android:name="imagen"
+            app:argType="string" />
+        <argument
+            android:name="disponible"
+            app:argType="boolean" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/cerrarFragment"
+        android:name="com.basicdeb.mercadito.ui.config.CerrarFragment"
+        android:label="Cerrar sesion"
+        tools:layout="@layout/cerrar_fragment" />
+
+</navigation>
